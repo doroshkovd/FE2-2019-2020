@@ -120,9 +120,10 @@
 // console.log(isPolindrom2('abba'));
 
 function getMultiplyTable() {
-  const body = document.body;
+  const { body } = document;
   const table = document.createElement('table');
-  let tr, td, tdInner = '';
+  let tr; let td; let
+    tdInner = '';
 
   table.style.width = '100%';
   table.setAttribute('border', '1');
@@ -143,6 +144,7 @@ function getMultiplyTable() {
   }
 
   body.append(table);
+  const str = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaa ddddddddddddddddddddddddddddd fffffffffffffffffffffffffff gggggggggggggggggggggg   ';
 }
 
 getMultiplyTable();
