@@ -6,7 +6,7 @@
  */
 
 describe('tdd.spec.js -> Should check populationGrow function', function() {
-  fit('Basic tests', function() {
+  it('Basic tests', function() {
     expect(populationGrow(1500, 5, 100, 5000)).toBe(15);
     expect(populationGrow(1500000, 2.5, 10000, 2000000)).toBe(10);
     expect(populationGrow(1500000, 0.25, 1000, 2000000)).toBe(94);
@@ -27,7 +27,7 @@ describe('tdd.spec.js -> tests for isTriangle function', function() {
 describe('tdd.spec.js ->  should return the length of the shortest word(s) in string', function(){
   it('Basic test', function() {
     expect(findShort('bitcoin take over the world maybe who knows perhaps')).toBe(3);
-    expect(findShort('turns out random test cases are easier than writing out basic ones')).toBe(3);
+    expect(findShort('turns  out random test cases are easier than writing out basic ones')).toBe(3);
   });
 });
 
@@ -43,10 +43,69 @@ describe('tdd.spec.js -> It should remove all values from list a, which are pres
   });
 
   it('Basic test', function() {
-    expect(arrayDiff([3, 4], [3])).toEqual([4]);
+    expect(arrayDiff([3, 4], [3, 3])).toEqual([4]);
   });
 
   it('Removing empty array should return array without diff', function() {
     expect(arrayDiff([1, 8, 2], [])).toEqual([1, 8, 2]);
+  });
+});
+
+describe('tdd.js -> convertToCamelCase', function() {
+  it('Should convert string with - to camelCase', function() {
+    let testStr = 'aaa-bbbb_ttt';
+    let result = convertToCamelCase(testStr);
+    expect(result).toBe('aaaBbbbTtt');
+  });
+});
+
+describe('tdd.js -> test prompt', function(){
+
+  let step = 1;
+
+  beforeEach(function () {
+    spyOn(window, 'prompt').and.callFake(function() {
+      let result;
+      switch (step) {
+        case 1:
+          step += 1;
+          result = 'a';
+          break;
+        case 2:
+          step += 1;
+          result = 'b';
+          break;
+      }
+      return result;
+    });
+  });
+
+  afterEach(function () {
+    step = 1;
+  });
+
+  it('should return string in upper case', function(){
+
+    let result = checkTestForPrompt();
+    expect(result).toBe('ab');
+  });
+
+  fit('should return string in upper case', function(){
+    spyOn(window, 'prompt').and.callFake(function() {
+      let result;
+      switch (step) {
+        case 1:
+          step += 1;
+          result = 'b';
+          break;
+        case 2:
+          step += 1;
+          result = null;
+          break;
+      }
+      return result;
+    });
+    let result = checkTestForPrompt();
+    expect(result).toBe('bnull');
   });
 });
