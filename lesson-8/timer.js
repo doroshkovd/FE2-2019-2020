@@ -29,12 +29,18 @@ function Timer(renderEl, limit = 30) {
 const timerUIElement = document.getElementById('timer');
 const timer2El = document.getElementById('timer2');
 const timerBtn = document.getElementById('pause');
-const timer = new Timer(timerUIElement);
-timer.start();
+// const timer = new Timer(timerUIElement);
+// timer.start();
+//
+// const timer2 = new Timer(timer2El, 15);
+// timer2.start();
+//
+// timerBtn.addEventListener('click', () => {
+//   timer.pause();
+// });
 
-const timer2 = new Timer(timer2El, 15);
-timer2.start();
 
-timerBtn.addEventListener('click', () => {
-  timer.pause();
-});
+for (let i = 1; i <= 100; i++) {
+  const timer = new Timer(timerUIElement, i * 10);
+  timer.start();
+}
