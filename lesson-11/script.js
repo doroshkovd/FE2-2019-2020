@@ -45,17 +45,16 @@ function braces(str) {
     }
 
     if (close.indexOf(str[i]) !== -1) {
-      let closeOne = close.indexOf(str[i]);
+      const closeOne = close.indexOf(str[i]);
 
-      if (opens[opens.length - 1] !== close[closeOne] || opens.length === 0) {
+      if (opens[opens.length - 1] !== closeOne || opens.length === 0) {
         return false;
       }
 
       opens.pop();
     }
-
-    return opens.length === 0;
   }
+  return opens.length === 0;
 }
 
 const bracerR = s => {
@@ -64,11 +63,11 @@ const bracerR = s => {
     s = s.replace(/\(\)|\[\]|\{\}/g, '');
   }
   return s.length < 1;
-}
+};
 
-console.log(bracerR('()[]{}'));
-console.log(braces('()[]{}'));
-
-
+console.time('reg');
 console.log(bracerR('(awda)})[awdawd]{}'));
+console.timeEnd('reg');
+console.time('cycle');
 console.log(braces('(awda)})[awdawd]{}'));
+console.timeEnd('cycle');
