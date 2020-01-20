@@ -5,7 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-<script src="./dist/bundle.js"></script>
+<script>
+  function* f(value) {
+    for (let item of value) {
+      yield item;
+    }
+  }
+
+  const iterator = f([2, 3, 5]);
+  console.log(iterator.next());
+  console.log(iterator.next());
+  console.log(iterator.next());
+  console.log(iterator.next());
+</script>
+<!--<script src="./dist/bundle.js"></script>-->
 <!--<script src="observer.js"></script>-->
 <!--<script type="module" src="es6-2.js"></script>-->
 <!--<script type="module" src="es6-1.js"></script>-->

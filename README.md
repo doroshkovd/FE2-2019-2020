@@ -90,3 +90,9 @@
 1. Класс в котором  организованы методы для RESTApi (GET, POST, PUT, DELETE);
 2. https://regexone.com/lesson/introduction_abcs
 </pre>
+
+<h3>Home task 7</h3>
+<pre>
+1. https://darksky.net Получить погоду на завтра используя fetch
+2. Переписать таймер из предыдущего задания на Promise
+</pre>
