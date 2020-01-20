@@ -11,7 +11,10 @@ x += 1;
 
 x += 10;
 console.log('x', x + x);
-console.log('hot');
+console.log('cold');
+console.log('cold');
+console.log('cold');
+
 
 // import * as test from "./es6-2.js";
 //

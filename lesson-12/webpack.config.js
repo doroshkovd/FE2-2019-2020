@@ -1,11 +1,11 @@
 module.exports = {
-  entry: './es6-1.js',
+  entry: ['webpack/hot/dev-server', './es6-1.js'],
   output: {
     filename: 'bundle.js',
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './',
+    contentBase: './dist',
     hot: true,
   },
   module: {
