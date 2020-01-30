@@ -6,9 +6,9 @@ import { CheckboxService } from "./checkbox-service";
 class App {
   constructor() {
     this.products = [];
-    this.pageRender = new PageRender();
     this.router = new Router();
     this.checkboxService = new CheckboxService();
+    this.pageRender = new PageRender(this.checkboxService);
     this.checkboxService.subscribe(this.onFilterChange);
     this.init();
   }
@@ -24,16 +24,18 @@ class App {
         this.products = data;
         this.pageRender.generateAllProducts(data);
         this.pageRender.initSingleProductPage();
+        this.pageRender.initResetCheckbox();
         this.initRouter();
         window.dispatchEvent(new HashChangeEvent('hashchange'));
       });
   }
 
   initRouter() {
-    this.router.addRoute('', this.pageRender.renderHomePage.bind(this, this.products));
+    this.router.addRoute('', this.pageRender.renderHomePage.bind(this.pageRender, this.products));
     this.router.addRoute('#products',
       this.pageRender.renderSingleProductPage.bind(this, this.products));
     this.router.addRoute('404', this.pageRender.renderErrorPage);
+    this.router.addRoute('#filter', this.pageRender.renderFilterResult.bind(this.pageRender, this.products, this.checkboxService.filters));
   }
 
   onFilterChange(data) {

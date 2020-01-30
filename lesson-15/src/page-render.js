@@ -1,7 +1,8 @@
 import { CONFIG } from "./config";
 
 export class PageRender {
-  constructor() {
+  constructor(checkboxService) {
+    this.checkboxService = checkboxService;
   }
 
   renderHomePage(products) {
@@ -48,7 +49,7 @@ export class PageRender {
 
         if (clicked.classList.contains('close') ||
         clicked.classList.contains('overlay')) {
-          location.hash = '';
+          location.hash = this.checkboxService.getCurrentState();
         }
       }
     });
@@ -76,5 +77,61 @@ export class PageRender {
   renderErrorPage() {
     const page = document.querySelector(CONFIG.selectors.errorPage);
     page.classList.add(CONFIG.visible);
+  }
+
+  filterResult(products, filter) {
+    const options = CONFIG.filterOptions;
+    let productsCopy = [...products];
+    let result = [];
+    let isFiltered = false;
+    this.clearCheckbox();
+
+    options.forEach((option) => {
+      if(filter[option] && filter[option].length) {
+        if (isFiltered) {
+          productsCopy = result;
+          result = [];
+        }
+
+        filter[option].forEach((item) => {
+          productsCopy.forEach((product) => {
+            if (typeof product.specs[option] === 'number' &&
+              product.specs[option] === Number(item)) {
+              result.push(product);
+              isFiltered = true;
+            }
+
+            if (typeof product.specs[option] === 'string' &&
+              product.specs[option].toLowerCase().indexOf(item) !== -1) {
+              result.push(product);
+              isFiltered = true;
+            }
+          });
+            [...document.querySelectorAll(`input[name=${option}]`)].filter((checkbox) => {
+              return checkbox.value === item;
+            })[0].checked = true;
+        });
+      }
+    });
+    return result;
+  }
+
+  renderFilterResult(products, filter)  {
+    const result = this.filterResult(products, filter);
+    this.renderHomePage(result);
+  }
+
+  clearCheckbox() {
+    [...document.querySelectorAll(CONFIG.selectors.checkbox)].forEach((checkbox) => {
+      checkbox.checked = false;
+    });
+  }
+
+  initResetCheckbox() {
+    document.querySelector('.filters button')
+      .addEventListener('click', (event) => {
+        event.preventDefault();
+        this.clearCheckbox();
+      });
   }
 }

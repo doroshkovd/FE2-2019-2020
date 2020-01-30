@@ -13,4 +13,5 @@ export const CONFIG = {
   },
   hidden: 'hidden',
   visible: 'visible',
+  filterOptions: ['manufacturer', 'storage', 'os', 'camera'],
 };
