@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #labelForCh3 {
+            width: 20px;
+            height: 20px;
+            display: block;
+            background: red;
+            border: 2px solid;
+        }
+
+        .checked-label {
+            background: #FFFFFF !important;
+        }
+    </style>
+</head>
+<body>
+<p id="eith-form">
+<form name="first">
+    <label id="labelForCh3" for="ch3"></label>
+    <input name="el1" type="text">
+    <input name="el2" type="text">
+    <input name="el3" type="text">
+    <input name="ch[]" type="checkbox" value="1">
+    <input name="ch[]" type="checkbox" value="2">
+    <input name="ch[]" id="ch3" hidden type="checkbox" value="3">
+    <label>Some label
+        <input name="ch[]" type="checkbox" value="4"></label>
+    <br />
+    <button onclick="consoleValue(event)">Console value</button>
+    <textarea name="text">
+        Lorem ipsum
+    </textarea>
+</form>
+</p>
+<script src="forms.js"></script>
+</body>
+</html>
