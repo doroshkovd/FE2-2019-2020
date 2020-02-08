@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .treangle {
+        color:#000000;
+        fill:#ff0000;
+        stroke-width:17
+    }
+</style>
+<div style='background-color: #fff'>
+<svg width="256" height="256" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<path class="treangle" d="m 133.08501,28.75909 a 7.4746049,7.4746049 0 0 0 -11.54314,1.75487 l -54.12787,93.74883 -54.12786,93.74883 a 7.4746049,7.4746049 0 0 0 6.45401,11.21164 l 108.25569,0 108.25576,0 a 7.4746049,7.4746049 0 0 0 6.47348,-11.19217 l -54.10833,-93.7683 -54.12785,-93.74883 a 7.4746049,7.4746049 0 0 0 -1.40389,-1.75487 z m -5.08917,20.45394 47.65436,82.51769 47.65444,82.55672 -95.3088,-3e-5 -95.30869,0 47.65437,-82.55669 47.65432,-82.51769 z"
+/>
+<path id=IMalanka d="m 140.6108,93.17314 -36.08065,55.83917 18.04032,1.2886 -18.04032,48.53712 36.93969,-53.69151 -16.32215,-3.86579 c 0,0 16.32215,-48.96665 15.46311,-48.10759 z"
+style="fill:#000000; stroke:#000000; stroke-width:0.5px; stroke-linecap:butt; stroke-linejoin:miter" />
+</svg>
+
+</div>
+
+<!--<svg width=100 height=100 xmlns='http://www.w3.org/2000/svg'>-->
+<!--<line x1=0 y1=0 x2=100 y2=100 stroke=red stroke-width=2 />-->
+<!--<ellipse cx=50 cy=50 rx=40 ry=20 fill=yellow stroke=blue />-->
+<!--</svg>-->
+
+<!--<svg width=90 height=90 xmlns='http://www.w3.org/2000/svg'-->
+<!--viewBox='20 20 50 50'>-->
+<!--<line x1=0 y1=0 x2=100 y2=100 stroke=red stroke-width=2 />-->
+<!--<ellipse cx=50 cy=50 rx=40 ry=20 fill=yellow stroke=blue />-->
+<!--</svg>-->
+
+<!--<style>-->
+<!--.line1 {-->
+<!--stroke: #00cc33;-->
+<!--stroke-width: 4px;-->
+<!--}-->
+<!--</style>-->
+
+<!--<svg class="line1" width=200 height=200 xmlns='http://www.w3.org/2000/svg'>-->
+<!--<line x1=0 y1=0 x2=100 y2=100 />-->
+<!--</svg>-->
+
+
+<!--<svg width=140 height=100 xmlns='http://www.w3.org/2000/svg'>-->
+<!--<defs>-->
+<!--<marker id='ARR' refX=0 refY=5 markerWidth=10 markerHeight=10-->
+<!--orient=auto fill=green>-->
+<!--<path d='M 0 0 L 10 5 L 0 10 z'>-->
+<!--</marker>-->
+<!--</defs>-->
+<!--<line x1=5 y1=20 x2=130 y2=70 stroke=red marker-end='url(#ARR)' />-->
+<!--</svg>-->
+
+
+<!--<svg width=195 height=285 xmlns='http://www.w3.org/2000/svg'>-->
+
+<!--    &lt;!&ndash; все линии рисуются против часовой стрелки &ndash;&gt;-->
+<!--    &lt;!&ndash; для серединки получается сумма пересечений = 2 &ndash;&gt;-->
+<!--    <path stroke=red stroke-width=3 fill=orange fill-rule=nonzero-->
+<!--          d="M 50,10 l -25,80 65,-50 -80,0 65,50 z" />-->
+<!--    <path stroke=red stroke-width=3 fill=orange fill-rule=evenodd-->
+<!--          d="M 150,10 l -25,80 65,-50 -80,0 65,50 z" />-->
+
+<!--    &lt;!&ndash; внутренний и внешний круг рисуются в разных направлениях &ndash;&gt;-->
+<!--    &lt;!&ndash; для серединки получается сумма пересечений = 0 &ndash;&gt;-->
+<!--    <path stroke=black fill=green fill-rule=nonzero d="M 10,150 a 10,10 0 0,1 80,0 m -80,0 a 10,10 0 0,0 80,0 m -15,0 a 25,25 0 0,1 -50,0 m 50,0 a 25,25 0 0,0 -50,0" />-->
+<!--    <path stroke=black fill=red fill-rule=evenodd d="M 100,150 a 10,10 0 0,1 80,0 m -80,0 a 10,10 0 0,0 80,0 m -15,0 a 25,25 0 0,1 -50,0 m 50,0 a 25,25 0 0,0 -50,0" />-->
+
+<!--    &lt;!&ndash; внутренний и внешний круг рисуются в одном направлении &ndash;&gt;-->
+<!--    &lt;!&ndash; для серединки получается сумма пересечений = 2 &ndash;&gt;-->
+<!--    <path stroke=black fill=green fill-rule=nonzero d="M 10,240 a 10,10 0 0,1 80,0 m -80,0 a 10,10 0 0,0 80,0 m -65,0 a 25,25 0 0,1 50,0 m -50,0 a 25,25 0 0,0 50,0" />-->
+<!--    <path stroke=black fill=red fill-rule=evenodd d="M 100,240 a 10,10 0 0,1 80,0 m -80,0 a 10,10 0 0,0 80,0 m -65,0 a 25,25 0 0,1 50,0 m -50,0 a 25,25 0 0,0 50,0" />-->
+
+<!--</svg>-->
+
+<!--<object type="image/svg+xml" data="test.svg" id="object"></object>-->
+
+<canvas id='CVD' width='200' height='400'>
+    Обновите браузер
+</canvas>
+<script>
+  var cvs = document.getElementById('CVD');
+  var context = cvs.getContext('2d');
+  context.strokeStyle='blue';
+  context.fillStyle='red';
+
+  context.beginPath();
+  context.moveTo(10,10);
+  context.lineTo(50,20);
+  context.lineTo(80,10);
+  context.stroke();
+
+  context.beginPath();
+  context.moveTo(10,40);
+  context.lineTo(50,70);
+  context.lineTo(100,30);
+  context.closePath();
+  context.stroke();
+  //
+  context.beginPath();
+  context.moveTo(10,90);
+  context.lineTo(50,120);
+  context.lineTo(100,80);
+  context.closePath();
+  context.stroke();
+  context.fill();
+  //
+  context.beginPath();
+  context.moveTo(10,150);
+  context.lineTo(200,200);
+  context.lineTo(180,150);
+  context.lineTo(20,190);
+  context.fill();
+  //
+  context.beginPath();
+  context.moveTo(100,250);
+  context.lineTo(140,340);
+  context.lineTo(40,280);
+  context.lineTo(160,280);
+  context.lineTo(60,340);
+  context.stroke();
+  context.fill();
+</script>
+
+<canvas id='CVI' width='240' height='300'>
+    Обновите браузер
+</canvas>
+<script>
+  var cvs=document.getElementById('CVI');
+  var context=cvs.getContext('2d');
+
+  var grad=context.createLinearGradient(0,0, 100,100);
+  grad.addColorStop(0,'red');
+  grad.addColorStop(0.5,'rgba(0,0,255,0.8)');
+  grad.addColorStop(1,'green');
+  context.fillStyle=grad;
+
+  context.fillRect(10,0, 230,50);
+  context.fillRect(10,60, 80,100);
+
+  var grad2=context.createRadialGradient(100,230,20, 100,230,50);
+  grad2.addColorStop(0,'red');
+  grad2.addColorStop(0.5,'rgba(0,0,255,0.8)');
+  grad2.addColorStop(1,'green');
+  context.fillStyle=grad2;
+
+  context.fillRect(50,200, 150,300);
+</script>
+<script src="object-svg.js"></script>
+<!--<script src="script.js"></script>-->
+</body>
+</html>
