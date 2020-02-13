@@ -9,6 +9,7 @@ export const CONFIG = {
     singlePage: '.single-product',
     singlePageContent: '.preview-large',
     errorPage: '.error',
+    loginPage: '.login',
     checkbox: '.all-products input[type=checkbox]',
   },
   hidden: 'hidden',

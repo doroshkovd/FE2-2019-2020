@@ -24,15 +24,28 @@ export class RouterHistory {
     this.routes[route] = action;
   }
 
+  isAuth() {
+    return sessionStorage.getItem('login');
+  }
+
   render(url) {
-    console.log(url);
-    let temp = url.split('/')[1];
+    if (this.isAuth()) {
+      console.log(url);
+      let temp = url.split('/')[1];
 
-    [...this.mainContentPages].forEach((page) => {
-      page.classList.remove(CONFIG.visible);
-    });
+      [...this.mainContentPages].forEach((page) => {
+        page.classList.remove(CONFIG.visible);
+      });
+      if (temp === 'login') {
+        temp = '';
+        history.pushState(null, null, '/');
+      }
+      this.routes[temp] ? this.routes[temp]() : this.routes['404']();
+    } else {
+      history.pushState(null, null, '/login');
+      this.routes['login']();
+    }
 
-    this.routes[temp] ? this.routes[temp]() : this.routes['404']();
   }
 
 }

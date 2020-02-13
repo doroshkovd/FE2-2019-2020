@@ -398,7 +398,7 @@ header h2.tzine a{
 	Error Page
 ----------------------------*/
 
-.error{
+.error, .login {
 	opacity: 0;
 	transition: 0.6s;
 	pointer-events: none;
@@ -409,8 +409,14 @@ header h2.tzine a{
 	z-index: 9999;
 }
 
-.error.visible{
+.login {
+	pointer-events: visible;
+	display: none;
+}
+
+.error.visible, .login.visible{
 	opacity: 1;
+	display: block;
 }
 
 .error h3{

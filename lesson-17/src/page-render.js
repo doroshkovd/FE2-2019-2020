@@ -63,6 +63,11 @@ export class PageRender {
     this.router.render(decodeURI(location.pathname));
   }
 
+  renderLogin() {
+    history.pushState(null, null, '/login');
+    this.router.render(decodeURI(location.pathname));
+  }
+
   renderSingleProductPage(products) {
     const page = document.querySelector(CONFIG.selectors.singlePage);
     const container = document.querySelector(CONFIG.selectors.singlePageContent);
@@ -87,6 +92,21 @@ export class PageRender {
 
   renderErrorPage() {
     const page = document.querySelector(CONFIG.selectors.errorPage);
+    page.classList.add(CONFIG.visible);
+  }
+
+  renderLoginPage() {
+    const page = document.querySelector(CONFIG.selectors.loginPage);
+    document.getElementById('registration').addEventListener('click',(event) => {
+      event.preventDefault();
+      if (event.target.classList.contains('open')) {
+        document.getElementById('registration-area').style.display = 'none';
+        event.target.classList.toggle('open');
+      } else {
+        document.getElementById('registration-area').style.display = 'block';
+        event.target.classList.toggle('open');
+      }
+    });
     page.classList.add(CONFIG.visible);
   }
 
