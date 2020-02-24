@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="width: 50%">
+<ul id="menu">
+    <li>
+        <div>Item 1</div>
+    </li>
+    <li>
+        <div>Item 2</div>
+    </li>
+    <li>
+        <div>Item 3</div>
+        <ul>
+            <li>
+                <div>Item 3-1</div>
+            </li>
+            <li>
+                <div>Item 3-2</div>
+            </li>
+            <li>
+                <div>Item 3-3</div>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <div>Item 4</div>
+    </li>
+    <li>
+        <div>Item 5</div>
+    </li>
+</ul>
+</div>
+<div id="dialog" title="Basic dialog">
+    <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+<p>Date: <input type="text" id="datepicker" size="30"></p>
+<form class="cmxform" id="commentForm" novalidate method="get" action="">
+    <fieldset>
+        <legend>Please provide your name, email address (won't be published) and a comment</legend>
+        <p>
+<!--            <label for="cname">Name (required, at least 2 characters)</label>-->
+            <span>Name:</span>
+            <input id="cname" name="name" type="text">
+        <p>
+            <label for="cemail">E-Mail</label>
+            <input id="cemail" type="email" name="contact">
+            <input type="checkbox" name="emailcheck" id="emailcheck">
+        </p>
+        <p>
+            <label for="curl">URL (optional)</label>
+            <input id="curl" type="url" name="url">
+        </p>
+        <p>
+            <label for="ccomment">Your comment (required)</label>
+            <textarea id="ccomment" name="comment"></textarea>
+        </p>
+        <p>
+            <input class="submit" type="submit" value="Submit">
+        </p>
+    </fieldset>
+</form>
+<div id="accordion">
+    <h3>First header</h3>
+    <div>First content panel</div>
+    <h3>Second header</h3>
+    <div>Second content panel</div>
+</div>
+<button id="button">Show modal</button>
+<script src="bundle.js"></script>
+</body>
+</html>
