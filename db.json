@@ -143,5 +143,12 @@
       "login": "test@test.com",
       "psw": 1234567
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "login": "test@test.com",
+      "psw": 1234567
+    }
   ]
 }
