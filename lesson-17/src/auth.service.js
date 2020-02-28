@@ -1,3 +1,5 @@
+import { CONFIG } from "./config";
+
 export class AuthService {
   constructor(router) {
     this.btn = document.getElementById('login-btn');
@@ -17,7 +19,7 @@ export class AuthService {
     const userPsw = document.getElementById('login-psw').value;
 
     if (userName.trim() && userPsw.trim()) {
-      fetch('http://localhost:3006/users')
+      fetch(`${CONFIG.api}/users`)
         .then((res) => res.json())
         .then((res) => {
           res = res.filter((item) => item.login === userName && String(item.psw) === userPsw);

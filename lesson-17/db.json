@@ -135,6 +135,23 @@
         "small": "assets/images/iphone5s.jpg",
         "large": "assets/images/iphone5s-large.jpg"
       }
+    },
+    {
+      "name": "New Item",
+      "price": 123,
+      "specs": {
+        "manufacturer": "My",
+        "storage": 16,
+        "os": "Android",
+        "camera": 15
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique ipsum in efficitur pharetra. Maecenas luctus ante in neque maximus, sed viverra sem posuere. Vestibulum lectus nisi, laoreet vel suscipit nec, feugiat at odio. Etiam eget tellus arcu.",
+      "rating": 4,
+      "image": {
+        "small": "assets/images/sony-xperia-z3.jpg",
+        "large": "assets/images/sony-xperia-z3-large.jpg"
+      },
+      "id": 9
     }
   ],
   "users": [

@@ -1,5 +1,5 @@
 export const CONFIG = {
-  api: 'http://localhost:3006',
+  api: 'https://my-json-server.typicode.com/doroshkovd/FE2-2019-2020',
   selectors: {
     mainContentPages: '.main-content .page',
     homePage: '.all-products',
